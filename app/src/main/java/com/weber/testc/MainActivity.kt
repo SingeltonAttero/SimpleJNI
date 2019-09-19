@@ -2,6 +2,7 @@ package com.weber.testc
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.weber.testc.model.StoreType
 import kotlinx.android.synthetic.main.activity_main.*
@@ -27,15 +28,63 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
-    }
-
-    private fun setValueStore() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     private fun getValueStore() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val key = inputKey.text.toString()
+        val storeType = typeSpinner.selectedItem as StoreType
+        if (keyPattern.matcher(key).matches()) {
+            errorMessage(key)
+        }
+
+        when (storeType) {
+            StoreType.DATE -> {
+                infoToast(storeType)
+            }
+            StoreType.TEXT -> {
+                infoToast(storeType)
+            }
+            StoreType.INT -> {
+                infoToast(storeType)
+            }
+        }
+
     }
+
+    private fun infoToast(storeType: StoreType) {
+        Toast.makeText(this, storeType.name, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun setValueStore() {
+        val key = inputKey.text.toString()
+        val value = inputValue.text.toString()
+        val storeType = typeSpinner.selectedItem as StoreType
+
+        if (!keyPattern.matcher(key).matches()) {
+            errorMessage(key)
+            return
+        }
+        when (storeType) {
+            StoreType.DATE -> {
+                infoToast(storeType)
+            }
+            StoreType.TEXT -> {
+                infoToast(storeType)
+            }
+            StoreType.INT -> {
+                infoToast(storeType)
+            }
+        }
+        updateTitle()
+    }
+
+    private fun updateTitle() {
+
+    }
+
+    private fun errorMessage(key: String) {
+        Toast.makeText(this, "this key = $key incorrect", Toast.LENGTH_SHORT).show()
+    }
+
 
 }
