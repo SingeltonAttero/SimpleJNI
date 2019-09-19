@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TestC</string>
+    <string name="key">Key</string>
+    <string name="value">Value</string>
+    <string name="type">Type</string>
+    <string name="get_key">get key</string>
+    <string name="get_value">get value</string>
+</resources>
