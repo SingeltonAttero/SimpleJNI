@@ -3,6 +3,6 @@
     <string name="key">Key</string>
     <string name="value">Value</string>
     <string name="type">Type</string>
-    <string name="get_key">get key</string>
-    <string name="get_value">get value</string>
+    <string name="get_key">get value</string>
+    <string name="set_value">set value</string>
 </resources>

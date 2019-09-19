@@ -76,24 +76,24 @@
         app:layout_constraintTop_toTopOf="@+id/titleType" />
 
     <Button
-        android:id="@+id/getKeyButton"
+        android:id="@+id/getValueButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/get_key"
-        app:layout_constraintEnd_toStartOf="@+id/getValueButton"
+        app:layout_constraintEnd_toStartOf="@+id/setValueButton"
         app:layout_constraintStart_toEndOf="@+id/titleType"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/typeSpinner" />
 
     <Button
-        android:id="@+id/getValueButton"
+        android:id="@+id/setValueButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/get_value"
+        android:text="@string/set_value"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/getKeyButton"
+        app:layout_constraintStart_toEndOf="@+id/getValueButton"
         app:layout_constraintTop_toBottomOf="@+id/typeSpinner" />
 
 
