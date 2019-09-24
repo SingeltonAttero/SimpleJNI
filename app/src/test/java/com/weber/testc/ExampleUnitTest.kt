@@ -1,8 +1,11 @@
 package com.weber.testc
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.junit.Test
-
-import org.junit.Assert.*
+import kotlin.coroutines.EmptyCoroutineContext
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -12,6 +15,16 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+        CoroutineScope(EmptyCoroutineContext).launch {
+            doSomething("MainScope")
+        }
+    }
+
+    private suspend fun doSomething(name: String) = coroutineScope {
+        launch {
+            delay(2000)
+            println("test delay 2000 $name")
+        }
+        println("go new $name")
     }
 }

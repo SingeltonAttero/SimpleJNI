@@ -6,5 +6,8 @@ object Clib {
         System.loadLibrary("native-lib")
     }
 
-    external fun stringFromJNI(): String
+    external fun getSizeStore(): Int
+    external fun getText(): String
+    external fun setText(key: String, value: String): String
+
 }

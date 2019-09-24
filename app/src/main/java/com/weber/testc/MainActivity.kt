@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.weber.testc.lib.Clib
 import com.weber.testc.model.StoreType
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.regex.Pattern
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 infoToast(storeType)
             }
             StoreType.TEXT -> {
-                infoToast(storeType)
+                inputValue.setText(Clib.getText())
             }
             StoreType.INT -> {
                 infoToast(storeType)
@@ -69,7 +70,7 @@ class MainActivity : AppCompatActivity() {
                 infoToast(storeType)
             }
             StoreType.TEXT -> {
-                infoToast(storeType)
+                Clib.setText(key, value)
             }
             StoreType.INT -> {
                 infoToast(storeType)

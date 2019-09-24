@@ -3,13 +3,15 @@
 #include "Store.h"
 
 
-static StoreEntry store;
-extern "C" JNIEXPORT jstring JNICALL
+static Store store;
 
-Java_com_weber_testc_lib_Clib_init(
-        JNIEnv *env,
-        jobject) {
-    store = 0
-    std::string hello = "init key-value store";
-    return env->NewStringUTF(hello.c_str());
+extern "C" JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reverved) {
+    store.length;
+    return JNI_VERSION_1_6;
+}
+
+extern "C" JNIEXPORT jint JNICALL
+Java_com_weber_testc_lib_Clib_getSizeStore(JNIEnv *env,
+                                           jobject) {
+    return store.length;
 }
